@@ -1,0 +1,29 @@
+import java.util.*;
+    
+    public class Main{
+    
+    public static void main(String[] args) {
+      // write your code here 
+      Scanner scan=new Scanner(System.in);
+      int n=scan.nextInt();
+      int count=0;
+      int save_karo=n;
+       int res1=n;
+      while(save_karo>0){
+         int x=save_karo%10;
+         save_karo=save_karo/10;
+         count++;
+      }
+      int res=count-1;
+    
+      while(res>=0){
+         
+       int y=res1/(int)(Math.pow(10,res));
+          System.out.println(y);
+          res1=res1%(int)(Math.pow(10,res));
+          res--;
+        
+      }
+     }
+     
+    }
