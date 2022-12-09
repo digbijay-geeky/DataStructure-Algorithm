@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+  // write your code here  
+  Scanner scan=new Scanner(System.in);
+  int n=scan.nextInt();
+  int start=1;
+  int save=n;
+  int sum=0;
+  while(save>0 ){
+      int x=save%10;
+      sum=sum+start*(int)Math.pow(10,x-1);
+      
+      start++;
+      save=save/10;
+    
+
+  }
+  System.out.println(sum);
+ }
+}
