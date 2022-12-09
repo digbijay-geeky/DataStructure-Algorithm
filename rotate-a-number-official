@@ -1,0 +1,32 @@
+import java.util.*;
+   
+   public class Main{
+   
+   public static void main(String[] args) {
+     // write your code here  
+     Scanner scan=new Scanner(System.in);
+     int n=scan.nextInt();
+     int k=scan.nextInt();
+     int save =n;
+     int res=n;
+     int total_digit=0;
+     
+     while(save!=0){
+         int x=save%10;
+         total_digit++;
+         save=save/10;
+     }
+    //  System.out.println(total_digit);
+     k=k%total_digit;
+     if(k<0){
+        
+        k=k+total_digit;
+     }
+     int power=(int)(Math.pow(10,k));
+     int result1=res%power;
+     int final_res=result1*(int)(Math.pow(10,total_digit-k));
+     int anotherOne=res/power;
+     System.out.println(final_res+anotherOne);
+     
+    }
+   }
