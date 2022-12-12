@@ -1,44 +1,45 @@
 import java.util.*;
 
-public class Main{
+public class Main {
 
-public static void main(String[] args) {
-    Scanner scn = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
 
-     // write ur code here
-
-    int n=scn.nextInt();
-    int space=(2*(n-1))-1;
-    int star=1;
-     int count=1;
-    for(int row=1;row<=n;row++){
-       int nextValue=count;
-        for(int i=1;i<=star;i++){
-            System.out.print(nextValue+"\t");
-            nextValue++;
-        }
-        for(int i=1;i<=space;i++){
-            System.out.print("\t");
-        }
-        if(row!=n){
-            for(int i=1;i<=star;i++){
-                nextValue--;
-              System.out.print(nextValue+"\t");
-            
-        } 
-        }
-        else{
-             for(int i=1;i<=star-1;i++){
-                  nextValue--;
-             System.out.print(nextValue-1+"\t");
-            
-        }
-        }
-        
-         System.out.println("");
-         star++;
-         space=space-2;
-        
+        // write ur code here
+            int n=scn.nextInt();
+            int space=n/2;
+            int star=1;
+            for(int row=1;row<=n;row++){
+                if(row!=n/2+1){
+                     for(int i=1;i<=space;i++){
+                    System.out.print("\t");
+                }
+                }
+               else{
+                    for(int i=1;i<=0;i++){
+                    System.out.print("\t");
+               }
+              
+                }
+               
+               
+                if(row!=n/2+1){
+                     for(int i=1;i<=star;i++){
+                    System.out.print("*\t");
+                }
+                }
+                else{
+                    for(int i=1;i<=n;i++){
+                    System.out.print("*\t");
+                }
+                }
+                 System.out.println();
+                if(row<=n/2){
+                    star++;
+                }
+                else{
+                    star--;
+                }
+            }
     }
- }
 }
