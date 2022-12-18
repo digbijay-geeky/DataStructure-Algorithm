@@ -1,0 +1,31 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public static ArrayList<String>getBoardPath(int curr,int end){
+        if(curr==end){
+            ArrayList<String>positiveBaseCase=new ArrayList<>();
+            positiveBaseCase.add("");
+            return positiveBaseCase;
+        }
+        if(curr>end){
+             ArrayList<String>positiveBaseCase=new ArrayList<>();
+            // positiveBaseCase.add("");
+            return positiveBaseCase;
+        }
+        
+        ArrayList<String>myResult=new ArrayList<>();
+        for(int dice=1;dice<=6;dice++){
+            ArrayList<String> recursionResult=getBoardPath(curr+dice,end);
+            for(int i=0;i<recursionResult.size();i++){
+                myResult.add(dice+recursionResult.get(i));
+            }
+        }
+        return myResult;
+    }
+	public static void main (String[] args) {
+		System.out.println(getBoardPath(0,10));
+	}
+}
