@@ -1,0 +1,35 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public static ArrayList<String>getMazePath(int startIndex,int endIndex,int destinationStartIndex,int destinationEndIndex){
+
+    if(startIndex==destinationStartIndex-1 && endIndex == destinationEndIndex-1){
+        ArrayList<String> positiveBaseCase=new ArrayList<>();
+        positiveBaseCase.add("");
+        return positiveBaseCase;
+    }
+    if(startIndex>destinationStartIndex || endIndex> destinationEndIndex){
+        ArrayList<String> positiveBaseCase=new ArrayList<>();
+        // positiveBaseCase.add("");
+        return positiveBaseCase;
+    }
+   
+    ArrayList<String>myRes=new ArrayList<>();
+     ArrayList<String>horizontalPath=getMazePath(startIndex,endIndex+1,destinationStartIndex,destinationEndIndex);
+     ArrayList<String>verticalPath=getMazePath(startIndex+1,endIndex,destinationStartIndex,destinationEndIndex);
+     for(int i=0;i<horizontalPath.size();i++){
+         myRes.add("h"+horizontalPath.get(i));
+     }
+     for(int i=0;i<verticalPath.size();i++){
+         myRes.add("v"+verticalPath.get(i));
+     }
+     return myRes;
+    }
+	public static void main (String[] args) {
+		System.out.println(getMazePath(0,0,3,3));
+		
+	}
+}
