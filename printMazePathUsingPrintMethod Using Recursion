@@ -1,0 +1,21 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void printMazePathUsingPrintMethod(int si,int ei,int di,int de,String ans){
+         if(si==di && ei==de){
+             System.out.println(ans);
+             return;
+         }
+         if(si>di || ei>de){
+             return;
+         }
+        printMazePathUsingPrintMethod(si,ei+1,di,de,ans+"h");
+        printMazePathUsingPrintMethod(si+1,ei,di,de,ans+"v");
+        
+    }
+	public static void main (String[] args) {
+		printMazePathUsingPrintMethod(0,0,2,2,"");
+	}
+}
