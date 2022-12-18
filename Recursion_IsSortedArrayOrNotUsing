@@ -1,0 +1,23 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static boolean IsSortedArrayOrNot(int arr[],int si){
+        
+        if(si==arr.length-1){
+            return true;
+        }
+        if(arr[si]>arr[si+1]){
+            return false;
+        }
+        
+        return IsSortedArrayOrNot(arr,si+1);
+        
+    }
+	public static void main (String[] args) {
+	    int arr[]={1,2,3,4,5};
+		boolean res=IsSortedArrayOrNot(arr,0);
+		System.out.println(res);
+	}
+}
