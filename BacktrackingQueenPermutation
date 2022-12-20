@@ -1,0 +1,25 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    public static void QueenPermutation(boolean[]boxes,int queenPlacedSoFar,int totalQueenCount,String ans){
+        
+        if(queenPlacedSoFar==totalQueenCount){
+            System.out.println(ans);
+            return;
+        }
+        for(int i=0;i<boxes.length;i++){
+            if(boxes[i]==false){
+                boxes[i]=true;
+               QueenPermutation(boxes,queenPlacedSoFar+1,totalQueenCount,"q"+queenPlacedSoFar+"b"+i);
+               boxes[i]=false;
+            }
+        }
+    }
+	public static void main (String[] args) {
+		System.out.println("GfG!");
+		QueenPermutation(new boolean[4],0,2,"");
+		
+	}
+}
